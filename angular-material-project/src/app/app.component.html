@@ -1,0 +1,26 @@
+<div>
+  <nav>
+    <a (click)="changeTab('home')">Accueil</a>
+    <a (click)="changeTab('articles')">Articles</a>
+    <a (click)="changeTab('comments')">Commentaires</a>
+    <a (click)="changeTab('create-article')">Créer un article</a>
+    <a *ngIf="!isLoggedIn" (click)="changeTab('login')">Connexion</a>
+    <a *ngIf="!isLoggedIn" (click)="changeTab('register')">Inscription</a>
+    <a *ngIf="isLoggedIn" (click)="logout()">Déconnexion</a>
+  </nav>
+
+  <main>
+    <ng-container *ngIf="isLoggedIn; else loginForm">
+      <app-home *ngIf="activeTab === 'home'"></app-home>
+      <app-articles *ngIf="activeTab === 'articles'"></app-articles>
+      <app-comments *ngIf="activeTab === 'comments'" [articleId]="selectedArticleId"></app-comments>
+      <app-create-article *ngIf="activeTab === 'create-article'"></app-create-article>
+    </ng-container>
+
+    <ng-template #loginForm>
+      <app-login *ngIf="activeTab === 'login'" (loggedIn)="login()"></app-login>
+      <app-register *ngIf="activeTab === 'register'"></app-register>
+    </ng-template>
+  </main>
+</div>
+

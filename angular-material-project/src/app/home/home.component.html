@@ -1,0 +1,11 @@
+<h1>Home Page</h1>
+
+<button mat-raised-button color="primary" routerLink="/login">Login</button>
+<button mat-raised-button color="primary" routerLink="/register">Register</button>
+
+<h2>Articles</h2>
+<ul>
+  <li *ngFor="let article of articles">
+    {{ article.title }} - {{ article.content }}
+  </li>
+</ul>

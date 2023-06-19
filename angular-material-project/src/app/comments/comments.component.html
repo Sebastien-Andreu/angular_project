@@ -1,0 +1,8 @@
+<div *ngFor="let comment of comments">
+  {{ comment }}
+</div>
+
+<form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="commentText">
+  <button type="submit" [disabled]="commentForm.invalid">Add Comment</button>
+</form>

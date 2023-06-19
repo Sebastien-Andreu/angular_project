@@ -1,0 +1,21 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Article 1",
+      "content": "Lorem ipsum dolor sit amet...",
+      "author": "John Doe",
+      "published": true,
+      "publicationDate": "2023-06-20"
+    },
+    {
+      "id": 2,
+      "title": "Article 2",
+      "content": "Lorem ipsum dolor sit amet...",
+      "author": "Jane Smith",
+      "published": false,
+      "publicationDate": "2023-06-25"
+    }
+  ],
+  "comments": []
+}
